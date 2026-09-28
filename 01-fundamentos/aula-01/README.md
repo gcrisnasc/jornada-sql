@@ -189,7 +189,7 @@ Abaixo está o registro da execução das tabelas `categorias` e `produtos` dent
 
 ![Execução do script de tabelas](./imagens/print_categoria_produtos.png)
 
-![Execução do script de tabelas](./imagens/print_categoria_prod_em%20linha.png.png)
+![Execução do script de tabelas](./imagens/print_categoria_prod_em%20linha.png)
 
 ---
 
