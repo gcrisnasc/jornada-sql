@@ -107,8 +107,8 @@ Chave Estrangeira (Foreign Key - FK): Cria o relacionamento entre tabelas. Apont
 CREATE TABLE pedidos (
     id_pedido SERIAL PRIMARY KEY,    -- Chave Primária (PK) do pedido
     data_pedido DATE NOT NULL,
-    valor DECIMAL(10,2),
-    id_cliente_fk INT,               -- Coluna para guardar o ID do cliente (FK)
+    valor NUMERIC(10,2),              -- Pode ser também o DECIMAL - SÃO O MESMO TIPO.
+    id_cliente_fk INT NOT NULL,               -- Coluna para guardar o ID do cliente (FK)
     
     -- Criando a regra da Chave Estrangeira (FK)
     CONSTRAINT fk_pedidos_clientes 
@@ -129,7 +129,7 @@ CREATE TABLE pedidos (
 | **DML** | Data Manipulation Language | Manipula os dados dentro das tabelas | `INSERT`, `UPDATE`, `DELETE` |
 | **DQL** | Data Query Language | Consulta os dados | `SELECT` |
 | **DCL** | Data Control Language | Controla permissões e acesso | `GRANT`, `REVOKE` |
-| **DTL** | Transaction Control Language | Controla transações (operações tudo-ou-nada) | `BEGIN`, `COMMIT`, `ROLLBACK` |
+| **TCL / DTL** | Transaction Control Language | Controla transações (operações tudo-ou-nada) | `BEGIN`, `COMMIT`, `ROLLBACK` |
 
 ## 📦 Entendendo as Famílias do SQL (A Metáfora do Estoque) - Meu Resumo 
 
@@ -174,11 +174,11 @@ nome_categoria VARCHAR(50) NOT NULL
 CREATE TABLE produtos(
 id_produto SERIAL PRIMARY KEY,
 nome_produto VARCHAR(100) NOT NULL,
-preco NUMERIC(10,2) NOT NULL CHECK(PRECO >= 0),
+preco NUMERIC(10,2) NOT NULL CHECK(preco >= 0),
 estoque INT NOT NULL DEFAULT 0,
-id_categoria-fk INT,   -- Aqui eu errei na digitação -- corrigido na imagem 
+id_categoria-fk INT NOT NULL,   -- Aqui errei na digitação -- corrigido na imagem  -- ❌ hífen no nome
 
-CONSTRAINT fk_produtos_categoria(id_categoria_fk) REFERENCES categorias(id_categoria)  -- aqui eu esqueci do FOREIGN KEY  -- Corrigido na imagem
+CONSTRAINT fk_produtos_categoria(id_categoria_fk) REFERENCES categorias(id_categoria)  -- Aqui esqueci do FOREIGN KEY  -- Corrigido na imagem ❌ faltou FOREIGN KEY
 );
 
 ```
@@ -189,7 +189,7 @@ Abaixo está o registro da execução das tabelas `categorias` e `produtos` dent
 
 ![Execução do script de tabelas](./imagens/print_categoria_produtos.png)
 
-![Execução do script de tabelas](./imagens/print_categoria_prod_em%20linha.png)
+![Execução do script de tabelas](./imagens/print_categoria_prod_em%20linha.png.png)
 
 ---
 

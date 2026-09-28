@@ -22,7 +22,6 @@ Este diretório reúne a base conceitual e prática da minha jornada em SQL com 
 
 ## 📚 Aulas Publicadas
 
-## 📚 Aulas Publicadas
 
 | Aula | Tema | O que foi praticado | Link |
 |------|------|---------------------|------|
