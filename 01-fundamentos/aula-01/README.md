@@ -193,13 +193,13 @@ Abaixo está o registro da execução das tabelas `categorias` e `produtos` dent
 Durante a prática no pgAdmin, aprendi que existem duas maneiras de interligar as tabelas no PostgreSQL:
 
 ### 1. Forma Profissional (Com Nome de Regra)
-Damos um nome específico para a nossa regra de relacionamento (`CONSTRAINT`). É a melhor prática para o mercado, pois facilita manutenções futuras.
+Dar um nome específico para a nossa regra de relacionamento (`CONSTRAINT`) para não ficar perdido. É a melhor prática para o mercado, pois facilita manutenções futuras.
 ```sql
 CONSTRAINT fk_produtos_categoria FOREIGN KEY (id_categoria_fk) REFERENCES categorias(id_categoria)
 ```
 
 ### 2. Forma Ultra Rápida (Em Linha)
-Cria a coluna e o relacionamento direto na mesma linha, poupando código. O ponto negativo é que o PostgreSQL gera um nome aleatório e feio para a regra por baixo dos panos.
+Cria a coluna e o relacionamento direto na mesma linha, poupando código. O ponto negativo é que o PostgreSQL gera um nome aleatório por baixo dos panos.
 ```sql
 id_categoria_fk INT REFERENCES categorias(id_categoria)
 ```
