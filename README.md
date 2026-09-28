@@ -7,6 +7,7 @@
 
 </div>
 
+
 Documentação da minha trilha de estudos em SQL e banco de dados relacionais. Um espaço dedicado à minha evolução prática e teórica, registrando meus erros e acertos no caminho.
 
 ---
@@ -25,11 +26,17 @@ Documentação da minha trilha de estudos em SQL e banco de dados relacionais. U
 
 Iniciei estes estudos com o objetivo de aprender a linguagem SQL e o ecossistema do PostgreSQL. Utilizo este repositório como um diário de aprendizagem contínuo. 
 
+
+---
+
 ## 🛠️ Tecnologias e Ferramentas
 
 * **Linguagem:** SQL (ANSI)
 * **SGBD:** PostgreSQL 18
 * **Interface:** pgAdmin 4 / VS Code
+
+
+---
 
 ## 📌 Status Atual
 
