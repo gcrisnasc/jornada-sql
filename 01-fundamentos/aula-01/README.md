@@ -32,9 +32,9 @@
 *   **N:N** — Pedidos têm vários produtos
 
 
-
 > ⚠️ **Regra de Ouro:** O banco relacional **não aceita** ligação N:N direta. A solução obrigatória é criar uma **Tabela Associativa** no meio para organizar a bagunça.
-> 
+
+---
 ### 🧠 Entendendo Melhor com exemplos
 
 **1FN (Primeira Forma Normal)** — "Cada coisa no seu quadrado"
@@ -42,15 +42,14 @@
 `TABELA_TELEFONE(id_telefone, numero, id_cliente)`. Se o cliente tiver 3 telefones, ele ganhará 3 linhas organizadas nesta tabela.
 
 **2FN (Segunda Forma Normal)** — "Quem manda é a chave inteira"
-
 *(Tabela Associativa):* `PEDIDO_PRODUTO(id_pedido, id_produto, quantidade)`. O campo `quantidade` precisa obrigatoriamente do pedido **E** do produto juntos para fazer sentido.
 
 
 **3FN (Terceira Forma Normal)** — "Sem intermediários""
-
 Em vez de colocar o endereço no cliente, separamos em duas caixas:
-    *   `CLIENTES(id_cliente, nome, cep)`
-    *   `ENDERECOS(cep, cidade, estado)`
+
+* `CLIENTES(id_cliente, nome, cep)`
+* `ENDERECOS(cep, cidade, estado)`
 
 
 
@@ -59,7 +58,7 @@ Em vez de colocar o endereço no cliente, separamos em duas caixas:
 
 > 💡 **Por que isso existe (e não simplesmente "uma planilha gigante com tudo junto")?**
 
-Porque separar a informação em tabelas relacionadas evita **redundância** e **inconsistência**.**
+Porque separar a informação em tabelas relacionadas evita **redundância** e **inconsistência**.
 
 
 ## 📊 Estudo de Caso Prático: (SQL )
@@ -99,6 +98,7 @@ Chave Estrangeira (Foreign Key - FK): Cria o relacionamento entre tabelas. Apont
 * Identidade Própria: A tabela que recebe a FK continua tendo sua própria PK individual.
 
 * Referência: Chama a tabela e o ID com o qual está se relacionando.
+  
 
 ## 💻 Prática em SQL
 
@@ -131,14 +131,19 @@ CREATE TABLE pedidos (
 | **DCL** | Data Control Language | Controla permissões e acesso | `GRANT`, `REVOKE` |
 | **DTL** | Transaction Control Language | Controla transações (operações tudo-ou-nada) | `BEGIN`, `COMMIT`, `ROLLBACK` |
 
-## 🧠 Meu Resumo
-** Imagine um estoque:
-**DDL** - controi as prateleiras, cria a estrutura - Definição.
-**DML** - Coloca, troca, ou tira os produtos, popula com dados - Manipulação.
-**DQL** - Responde as perguntas sobre os produtos dentro do estoque, consulta, extrai informações - Consulta.
-**DCL** - Decide quem tem a chave do estoque, controla o acesso - Permissão e Acesso.
-**DTL / TCL** Quer o resultado da ação. Não adianta começar tirando se não tem onde colocar, controla transações.
+## 📦 Entendendo as Famílias do SQL (A Metáfora do Estoque) - Meu Resumo 
 
+Para fixar a lógica de cada sigla, criei uma analogia prática pensando no gerenciamento de um estoque de mercadorias:
+
+| Família | Nome Técnico | O que faz no Estoque? (Analogia Prática) | Meu Entendimento |
+| :---: | :--- | :--- | :--- |
+| **DDL** | Data Definition Language | **Constrói as prateleiras** | Cria e modifica a estrutura do banco (Definição). |
+| **DML** | Data Manipulation Language | **Coloca, troca ou retira** os produtos das prateleiras. | Insere, atualiza e deleta as linhas de dados (Manipulação). |
+| **DQL** | Data Query Language | **Responde às perguntas** sobre as mercadorias guardadas. | Consulta o banco e extrai informações para relatórios (Consulta). |
+| **DCL** | Data Control Language | **Decide quem tem a chave** das portas do estoque. | Controla quais usuários têm permissão de acesso (Segurança). |
+| **DTL / TCL** | Transaction Control Language | **Garante o resultado da ação.** (Não adianta tirar de uma prateleira se não houver onde colocar do outro lado). | Controla as transações de forma "tudo ou nada" (Consistência). |
+
+---
 
 ```sql
 -- 1. Criar o banco de dados de treinos
@@ -149,7 +154,7 @@ CREATE DATABASE nome_do_banco;
 >
 ![Dando reflesh para atualizar o database](./imagens/atualiza_bd.png)
 
-
+---
 
 ## 🚀 Desafio de Código:
 
